@@ -8,6 +8,7 @@
 import requests
 import json
 
+
 def load_ximaFM():
     base_url = "https://www.ximalaya.com/revision/play/album?albumId=383635&pageNum="
     headers = {
@@ -29,4 +30,6 @@ def load_ximaFM():
 
             with open("A Brief History of Time/{}.m4a".format(album_name), "wb")as f:
                 f.write(requests.get(album_url, headers=headers).content)
+
+
 load_ximaFM()
